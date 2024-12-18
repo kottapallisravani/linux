@@ -1784,4 +1784,632 @@ total 24
 4 -rw-r--r--  1 root     root     3771 Mar 31  2024 .bashrc
 4 -rw-r-----  1 bandit12 bandit11   49 Sep 19 07:08 data.txt
 4 -rw-r--r--  1 root     root      807 Mar 31  2024 .profile
+(susi㉿kali)-[~]
+└─$ cd Desktop
+                                                                                                                                                                        
+┌──(susi㉿kali)-[~/Desktop]
+└─$ ssh bandit11@bandit.labs.overthewire.org -p 2220
+                         _                     _ _ _   
+                        | |__   __ _ _ __   __| (_) |_ 
+                        | '_ \ / _` | '_ \ / _` | | __|
+                        | |_) | (_| | | | | (_| | | |_ 
+                        |_.__/ \__,_|_| |_|\__,_|_|\__|
+                                                       
 
+                      This is an OverTheWire game server. 
+            More information on http://www.overthewire.org/wargames
+
+bandit11@bandit.labs.overthewire.org's password: 
+
+      ,----..            ,----,          .---.
+     /   /   \         ,/   .`|         /. ./|
+    /   .     :      ,`   .'  :     .--'.  ' ;
+   .   /   ;.  \   ;    ;     /    /__./ \ : |
+  .   ;   /  ` ; .'___,/    ,' .--'.  '   \' .
+  ;   |  ; \ ; | |    :     | /___/ \ |    ' '
+  |   :  | ; | ' ;    |.';  ; ;   \  \;      :
+  .   |  ' ' ' : `----'  |  |  \   ;  `      |
+  '   ;  \; /  |     '   :  ;   .   \    .\  ;
+   \   \  ',  /      |   |  '    \   \   ' \ |
+    ;   :    /       '   :  |     :   '  |--"
+     \   \ .'        ;   |.'       \   \ ;
+  www. `---` ver     '---' he       '---" ire.org
+
+
+Welcome to OverTheWire!
+
+If you find any problems, please report them to the #wargames channel on
+discord or IRC.
+
+--[ Playing the games ]--
+
+  This machine might hold several wargames.
+  If you are playing "somegame", then:
+
+    * USERNAMES are somegame0, somegame1, ...
+    * Most LEVELS are stored in /somegame/.
+    * PASSWORDS for each level are stored in /etc/somegame_pass/.
+
+  Write-access to homedirectories is disabled. It is advised to create a
+  working directory with a hard-to-guess name in /tmp/.  You can use the
+  command "mktemp -d" in order to generate a random and hard to guess
+  directory in /tmp/.  Read-access to both /tmp/ is disabled and to /proc
+  restricted so that users cannot snoop on eachother. Files and directories
+  with easily guessable or short names will be periodically deleted! The /tmp
+  directory is regularly wiped.
+  Please play nice:
+
+    * don't leave orphan processes running
+    * don't leave exploit-files laying around
+    * don't annoy other players
+    * don't post passwords or spoilers
+    * again, DONT POST SPOILERS!
+      This includes writeups of your solution on your blog or website!
+
+--[ Tips ]--
+
+  This machine has a 64bit processor and many security-features enabled
+  by default, although ASLR has been switched off.  The following
+  compiler flags might be interesting:
+
+    -m32                    compile for 32bit
+    -fno-stack-protector    disable ProPolice
+    -Wl,-z,norelro          disable relro
+
+  In addition, the execstack tool can be used to flag the stack as
+  executable on ELF binaries.
+
+  Finally, network-access is limited for most levels by a local
+  firewall.
+
+--[ Tools ]--
+
+ For your convenience we have installed a few useful tools which you can find
+ in the following locations:
+
+    * gef (https://github.com/hugsy/gef) in /opt/gef/
+    * pwndbg (https://github.com/pwndbg/pwndbg) in /opt/pwndbg/
+    * gdbinit (https://github.com/gdbinit/Gdbinit) in /opt/gdbinit/
+    * pwntools (https://github.com/Gallopsled/pwntools)
+    * radare2 (http://www.radare.org/)
+
+--[ More information ]--
+
+  For more information regarding individual wargames, visit
+  http://www.overthewire.org/wargames/
+
+  For support, questions or comments, contact us on discord or IRC.
+
+  Enjoy your stay!
+
+bandit11@bandit:~$ ls -alps
+total 24
+4 drwxr-xr-x  2 root     root     4096 Sep 19 07:08 ./
+4 drwxr-xr-x 70 root     root     4096 Sep 19 07:09 ../
+4 -rw-r--r--  1 root     root      220 Mar 31  2024 .bash_logout
+4 -rw-r--r--  1 root     root     3771 Mar 31  2024 .bashrc
+4 -rw-r-----  1 bandit12 bandit11   49 Sep 19 07:08 data.txt
+4 -rw-r--r--  1 root     root      807 Mar 31  2024 .profile
+bandit11@bandit:~$ cat data.txt
+Gur cnffjbeq vf 7k16JArUVv5LxVuJfsSVdbbtaHGlw9D4
+password:7x16WNeHIi5YkIhWsfFIqoognUTyj9Q4
+bandit11@bandit:~$ exit
+logout
+Connection to bandit.labs.overthewire.org closed.
+   bandit12@bandit:/tmp/srav123$ exit
+logout
+Connection to bandit.labs.overthewire.org closed.
+                                                                                                                                                                        
+┌──(susi㉿kali)-[~/Desktop]
+└─$ ssh bandit12@bandit.labs.overthewire.org -p 2220
+                         _                     _ _ _   
+                        | |__   __ _ _ __   __| (_) |_ 
+                        | '_ \ / _` | '_ \ / _` | | __|
+                        | |_) | (_| | | | | (_| | | |_ 
+                        |_.__/ \__,_|_| |_|\__,_|_|\__|
+                                                       
+
+                      This is an OverTheWire game server. 
+            More information on http://www.overthewire.org/wargames
+
+bandit12@bandit.labs.overthewire.org's password: 
+
+      ,----..            ,----,          .---.
+     /   /   \         ,/   .`|         /. ./|
+    /   .     :      ,`   .'  :     .--'.  ' ;
+   .   /   ;.  \   ;    ;     /    /__./ \ : |
+  .   ;   /  ` ; .'___,/    ,' .--'.  '   \' .
+  ;   |  ; \ ; | |    :     | /___/ \ |    ' '
+  |   :  | ; | ' ;    |.';  ; ;   \  \;      :
+  .   |  ' ' ' : `----'  |  |  \   ;  `      |
+  '   ;  \; /  |     '   :  ;   .   \    .\  ;
+   \   \  ',  /      |   |  '    \   \   ' \ |
+    ;   :    /       '   :  |     :   '  |--"
+     \   \ .'        ;   |.'       \   \ ;
+  www. `---` ver     '---' he       '---" ire.org
+
+
+Welcome to OverTheWire!
+
+If you find any problems, please report them to the #wargames channel on
+discord or IRC.
+
+--[ Playing the games ]--
+
+  This machine might hold several wargames.
+  If you are playing "somegame", then:
+
+    * USERNAMES are somegame0, somegame1, ...
+    * Most LEVELS are stored in /somegame/.
+    * PASSWORDS for each level are stored in /etc/somegame_pass/.
+
+  Write-access to homedirectories is disabled. It is advised to create a
+  working directory with a hard-to-guess name in /tmp/.  You can use the
+  command "mktemp -d" in order to generate a random and hard to guess
+  directory in /tmp/.  Read-access to both /tmp/ is disabled and to /proc
+  restricted so that users cannot snoop on eachother. Files and directories
+  with easily guessable or short names will be periodically deleted! The /tmp
+  directory is regularly wiped.
+  Please play nice:
+
+    * don't leave orphan processes running
+    * don't leave exploit-files laying around
+    * don't annoy other players
+    * don't post passwords or spoilers
+    * again, DONT POST SPOILERS!
+      This includes writeups of your solution on your blog or website!
+
+--[ Tips ]--
+
+  This machine has a 64bit processor and many security-features enabled
+  by default, although ASLR has been switched off.  The following
+  compiler flags might be interesting:
+
+    -m32                    compile for 32bit
+    -fno-stack-protector    disable ProPolice
+    -Wl,-z,norelro          disable relro
+
+  In addition, the execstack tool can be used to flag the stack as
+  executable on ELF binaries.
+
+  Finally, network-access is limited for most levels by a local
+  firewall.
+
+--[ Tools ]--
+
+ For your convenience we have installed a few useful tools which you can find
+ in the following locations:
+
+    * gef (https://github.com/hugsy/gef) in /opt/gef/
+    * pwndbg (https://github.com/pwndbg/pwndbg) in /opt/pwndbg/
+    * gdbinit (https://github.com/gdbinit/Gdbinit) in /opt/gdbinit/
+    * pwntools (https://github.com/Gallopsled/pwntools)
+    * radare2 (http://www.radare.org/)
+
+--[ More information ]--
+
+  For more information regarding individual wargames, visit
+  http://www.overthewire.org/wargames/
+
+  For support, questions or comments, contact us on discord or IRC.
+
+  Enjoy your stay!
+
+bandit12@bandit:~$ ls -alps
+total 24
+4 drwxr-xr-x  2 root     root     4096 Sep 19 07:08 ./
+4 drwxr-xr-x 70 root     root     4096 Sep 19 07:09 ../
+4 -rw-r--r--  1 root     root      220 Mar 31  2024 .bash_logout
+4 -rw-r--r--  1 root     root     3771 Mar 31  2024 .bashrc
+4 -rw-r-----  1 bandit13 bandit12 2583 Sep 19 07:08 data.txt
+4 -rw-r--r--  1 root     root      807 Mar 31  2024 .profile
+bandit12@bandit:~$ mkdir /tmp/srav123
+mkdir: cannot create directory ‘/tmp/srav123’: File exists
+bandit12@bandit:~$ cd /tmp
+bandit12@bandit:/tmp$ ls -alps
+ls: cannot open directory '.': Permission denied
+bandit12@bandit:/tmp$ mkdir /tmp/sravs123
+bandit12@bandit:/tmp$ cp data.txt /tmp/sravs123
+bandit12@bandit:/tmp$ cd /tmp/sravs123
+bandit12@bandit:/tmp/sravs123$ ls -alps
+total 13584
+    4 drwxrwxr-x 2 bandit12 bandit12     4096 Dec 18 09:27 ./
+13576 drwxrwx-wt 1 root     root     13897728 Dec 18 09:27 ../
+    4 -rw-r----- 1 bandit12 bandit12     2583 Dec 18 09:27 data.txt
+bandit12@bandit:/tmp/sravs123$ xxd -r data.txt >data
+bandit12@bandit:/tmp/sravs123$ ls
+data  data.txt
+bandit12@bandit:/tmp/sravs123$ file data
+data: gzip compressed data, was "data2.bin", last modified: Thu Sep 19 07:08:15 2024, max compression, from Unix, original size modulo 2^32 574
+bandit12@bandit:/tmp/sravs123$ mv data file.gz
+bandit12@bandit:/tmp/sravs123$ gzip -d file.gz
+bandit12@bandit:/tmp/sravs123$ ls
+data.txt  file
+bandit12@bandit:/tmp/sravs123$ file file
+file: bzip2 compressed data, block size = 900k
+bandit12@bandit:/tmp/sravs123$ mv file file.bz2
+bandit12@bandit:/tmp/sravs123$ bzip2 -d file.bz2
+bandit12@bandit:/tmp/sravs123$ ls
+data.txt  file
+bandit12@bandit:/tmp/sravs123$ file file
+file: gzip compressed data, was "data4.bin", last modified: Thu Sep 19 07:08:15 2024, max compression, from Unix, original size modulo 2^32 20480
+bandit12@bandit:/tmp/sravs123$ mv file file.gz
+bandit12@bandit:/tmp/sravs123$ gzip -d file.gz
+bandit12@bandit:/tmp/sravs123$ ls
+data.txt  file
+bandit12@bandit:/tmp/sravs123$ file file
+file: POSIX tar archive (GNU)
+bandit12@bandit:/tmp/sravs123$ mv file file.tar
+bandit12@bandit:/tmp/sravs123$ tar xf file.tar
+bandit12@bandit:/tmp/sravs123$ ls
+data5.bin  data.txt  file.tar
+bandit12@bandit:/tmp/sravs123$ file data5.bin
+data5.bin: POSIX tar archive (GNU)
+bandit12@bandit:/tmp/sravs123$ rm file.tar
+bandit12@bandit:/tmp/sravs123$ ls
+data5.bin  data.txt
+bandit12@bandit:/tmp/sravs123$ rm data.txt
+bandit12@bandit:/tmp/sravs123$ ls
+data5.bin
+bandit12@bandit:/tmp/sravs123$ file data5.bin
+data5.bin: POSIX tar archive (GNU)
+bandit12@bandit:/tmp/sravs123$ mv data5.bin data.tar
+bandit12@bandit:/tmp/sravs123$ tar xf data.tar
+bandit12@bandit:/tmp/sravs123$ ls
+data6.bin  data.tar
+bandit12@bandit:/tmp/sravs123$ file data6.bin
+data6.bin: bzip2 compressed data, block size = 900k
+bandit12@bandit:/tmp/sravs123$ mv data6.bin data.bz2
+bandit12@bandit:/tmp/sravs123$ bzip2 -d data.bz2
+bandit12@bandit:/tmp/sravs123$ ls
+data  data.tar
+bandit12@bandit:/tmp/sravs123$ file data
+data: POSIX tar archive (GNU)
+bandit12@bandit:/tmp/sravs123$ mv data data.tar
+bandit12@bandit:/tmp/sravs123$ ls
+data.tar
+bandit12@bandit:/tmp/sravs123$ tar xf data.tar
+bandit12@bandit:/tmp/sravs123$ ls
+data8.bin  data.tar
+bandit12@bandit:/tmp/sravs123$ file data8.bin
+data8.bin: gzip compressed data, was "data9.bin", last modified: Thu Sep 19 07:08:15 2024, max compression, from Unix, original size modulo 2^32 49
+bandit12@bandit:/tmp/sravs123$ mv data8.bin data.gz
+bandit12@bandit:/tmp/sravs123$ gzip -d data.gz
+bandit12@bandit:/tmp/sravs123$ ls
+data  data.tar
+bandit12@bandit:/tmp/sravs123$ file data
+data: ASCII text
+bandit12@bandit:/tmp/sravs123$ cat data
+The password is FO5dwFsc0cbaIiH0h8J2eUks2vdTDwAn
+bandit12@bandit:/tmp/sravs123$ 
+bandit12@bandit:/tmp/sravs123$ exit
+logout
+Connection to bandit.labs.overthewire.org closed.
+                                                                                                                                                                        
+┌──(susi㉿kali)-[~/Desktop]
+└─$ ssh bandit13@bandit.labs.overthewire.org -p 2220
+                         _                     _ _ _   
+                        | |__   __ _ _ __   __| (_) |_ 
+                        | '_ \ / _` | '_ \ / _` | | __|
+                        | |_) | (_| | | | | (_| | | |_ 
+                        |_.__/ \__,_|_| |_|\__,_|_|\__|
+                                                       
+
+                      This is an OverTheWire game server. 
+            More information on http://www.overthewire.org/wargames
+
+bandit13@bandit.labs.overthewire.org's password: 
+
+      ,----..            ,----,          .---.
+     /   /   \         ,/   .`|         /. ./|
+    /   .     :      ,`   .'  :     .--'.  ' ;
+   .   /   ;.  \   ;    ;     /    /__./ \ : |
+  .   ;   /  ` ; .'___,/    ,' .--'.  '   \' .
+  ;   |  ; \ ; | |    :     | /___/ \ |    ' '
+  |   :  | ; | ' ;    |.';  ; ;   \  \;      :
+  .   |  ' ' ' : `----'  |  |  \   ;  `      |
+  '   ;  \; /  |     '   :  ;   .   \    .\  ;
+   \   \  ',  /      |   |  '    \   \   ' \ |
+    ;   :    /       '   :  |     :   '  |--"
+     \   \ .'        ;   |.'       \   \ ;
+  www. `---` ver     '---' he       '---" ire.org
+
+
+Welcome to OverTheWire!
+
+If you find any problems, please report them to the #wargames channel on
+discord or IRC.
+
+--[ Playing the games ]--
+
+  This machine might hold several wargames.
+  If you are playing "somegame", then:
+
+    * USERNAMES are somegame0, somegame1, ...
+    * Most LEVELS are stored in /somegame/.
+    * PASSWORDS for each level are stored in /etc/somegame_pass/.
+
+  Write-access to homedirectories is disabled. It is advised to create a
+  working directory with a hard-to-guess name in /tmp/.  You can use the
+  command "mktemp -d" in order to generate a random and hard to guess
+  directory in /tmp/.  Read-access to both /tmp/ is disabled and to /proc
+  restricted so that users cannot snoop on eachother. Files and directories
+  with easily guessable or short names will be periodically deleted! The /tmp
+  directory is regularly wiped.
+  Please play nice:
+
+    * don't leave orphan processes running
+    * don't leave exploit-files laying around
+    * don't annoy other players
+    * don't post passwords or spoilers
+    * again, DONT POST SPOILERS!
+      This includes writeups of your solution on your blog or website!
+
+--[ Tips ]--
+
+  This machine has a 64bit processor and many security-features enabled
+  by default, although ASLR has been switched off.  The following
+  compiler flags might be interesting:
+
+    -m32                    compile for 32bit
+    -fno-stack-protector    disable ProPolice
+    -Wl,-z,norelro          disable relro
+
+  In addition, the execstack tool can be used to flag the stack as
+  executable on ELF binaries.
+
+  Finally, network-access is limited for most levels by a local
+  firewall.
+
+--[ Tools ]--
+
+ For your convenience we have installed a few useful tools which you can find
+ in the following locations:
+
+    * gef (https://github.com/hugsy/gef) in /opt/gef/
+    * pwndbg (https://github.com/pwndbg/pwndbg) in /opt/pwndbg/
+    * gdbinit (https://github.com/gdbinit/Gdbinit) in /opt/gdbinit/
+    * pwntools (https://github.com/Gallopsled/pwntools)
+    * radare2 (http://www.radare.org/)
+
+--[ More information ]--
+
+  For more information regarding individual wargames, visit
+  http://www.overthewire.org/wargames/
+
+  For support, questions or comments, contact us on discord or IRC.
+
+  Enjoy your stay!
+
+bandit13@bandit:~$ ls -alps
+total 24
+4 drwxr-xr-x  2 root     root     4096 Sep 19 07:08 ./
+4 drwxr-xr-x 70 root     root     4096 Sep 19 07:09 ../
+4 -rw-r--r--  1 root     root      220 Mar 31  2024 .bash_logout
+4 -rw-r--r--  1 root     root     3771 Mar 31  2024 .bashrc
+4 -rw-r--r--  1 root     root      807 Mar 31  2024 .profile
+4 -rw-r-----  1 bandit14 bandit13 1679 Sep 19 07:08 sshkey.private
+bandit13@bandit:~$ man ssh
+bandit13@bandit:~$ ssh -i sshkey.private bandit14@localhost
+The authenticity of host 'localhost (127.0.0.1)' can't be established.
+ED25519 key fingerprint is SHA256:C2ihUBV7ihnV1wUXRb4RrEcLfXC5CXlhmAAM/urerLY.
+This key is not known by any other names.
+Are you sure you want to continue connecting (yes/no/[fingerprint])? yes
+Could not create directory '/home/bandit13/.ssh' (Permission denied).
+Failed to add the host to the list of known hosts (/home/bandit13/.ssh/known_hosts).
+
+                      This is an OverTheWire game server. 
+            More information on http://www.overthewire.org/wargames
+
+!!! You are trying to log into this SSH server on port 22, which is not intended.
+
+bandit14@localhost: Permission denied (publickey).
+bandit13@bandit:~$ ssh -i sshkey.private bandit14@localhost
+The authenticity of host 'localhost (127.0.0.1)' can't be established.
+ED25519 key fingerprint is SHA256:C2ihUBV7ihnV1wUXRb4RrEcLfXC5CXlhmAAM/urerLY.
+This key is not known by any other names.
+Are you sure you want to continue connecting (yes/no/[fingerprint])? yes
+Could not create directory '/home/bandit13/.ssh' (Permission denied).
+Failed to add the host to the list of known hosts (/home/bandit13/.ssh/known_hosts).
+
+                      This is an OverTheWire game server. 
+            More information on http://www.overthewire.org/wargames
+
+!!! You are trying to log into this SSH server on port 22, which is not intended.
+
+bandit14@localhost: Permission denied (publickey).
+bandit13@bandit:~$ ssh -i sshkey.private bandit14@localhost
+The authenticity of host 'localhost (127.0.0.1)' can't be established.
+ED25519 key fingerprint is SHA256:C2ihUBV7ihnV1wUXRb4RrEcLfXC5CXlhmAAM/urerLY.
+This key is not known by any other names.
+Are you sure you want to continue connecting (yes/no/[fingerprint])? yes
+Could not create directory '/home/bandit13/.ssh' (Permission denied).
+Failed to add the host to the list of known hosts (/home/bandit13/.ssh/known_hosts).
+
+                      This is an OverTheWire game server. 
+            More information on http://www.overthewire.org/wargames
+
+!!! You are trying to log into this SSH server on port 22, which is not intended.
+
+bandit14@localhost: Permission denied (publickey).
+bandit13@bandit:~$ ls -alps
+total 24
+4 drwxr-xr-x  2 root     root     4096 Sep 19 07:08 ./
+4 drwxr-xr-x 70 root     root     4096 Sep 19 07:09 ../
+4 -rw-r--r--  1 root     root      220 Mar 31  2024 .bash_logout
+4 -rw-r--r--  1 root     root     3771 Mar 31  2024 .bashrc
+4 -rw-r--r--  1 root     root      807 Mar 31  2024 .profile
+4 -rw-r-----  1 bandit14 bandit13 1679 Sep 19 07:08 sshkey.private
+bandit13@bandit:~$ lssss
+lssss: command not found
+bandit13@bandit:~$ ls
+sshkey.private
+bandit13@bandit:~$ ssh -i ^[[200~sshkey.private
+Warning: Identity file sshkey.private not accessible: No such file or directory.
+usage: ssh [-46AaCfGgKkMNnqsTtVvXxYy] [-B bind_interface] [-b bind_address]
+           [-c cipher_spec] [-D [bind_address:]port] [-E log_file]
+           [-e escape_char] [-F configfile] [-I pkcs11] [-i identity_file]
+           [-J destination] [-L address] [-l login_name] [-m mac_spec]
+           [-O ctl_cmd] [-o option] [-P tag] [-p port] [-R address]
+           [-S ctl_path] [-W host:port] [-w local_tun[:remote_tun]]
+           destination [command [argument ...]]
+       ssh [-Q query_option]
+bandit13@bandit:~$ ssh -i sshkey.private bandit14@localhost
+The authenticity of host 'localhost (127.0.0.1)' can't be established.
+ED25519 key fingerprint is SHA256:C2ihUBV7ihnV1wUXRb4RrEcLfXC5CXlhmAAM/urerLY.
+This key is not known by any other names.
+Are you sure you want to continue connecting (yes/no/[fingerprint])? yes
+Could not create directory '/home/bandit13/.ssh' (Permission denied).
+Failed to add the host to the list of known hosts (/home/bandit13/.ssh/known_hosts).
+
+                      This is an OverTheWire game server. 
+            More information on http://www.overthewire.org/wargames
+
+!!! You are trying to log into this SSH server on port 22, which is not intended.
+
+bandit14@localhost: Permission denied (publickey).
+bandit13@bandit:~$ man ssh
+bandit13@bandit:~$ chmod 600 sshkey.private
+chmod: changing permissions of 'sshkey.private': Operation not permitted
+bandit13@bandit:~$ mkdir -p ~/.ssh
+chmod 700 ~/.ssh
+mkdir: cannot create directory ‘/home/bandit13/.ssh’: Permission denied
+chmod: cannot access '/home/bandit13/.ssh': No such file or directory
+bandit13@bandit:~$ ssh -i sshkey.private bandit14@localhost
+The authenticity of host 'localhost (127.0.0.1)' can't be established.
+ED25519 key fingerprint is SHA256:C2ihUBV7ihnV1wUXRb4RrEcLfXC5CXlhmAAM/urerLY.
+This key is not known by any other names.
+Are you sure you want to continue connecting (yes/no/[fingerprint])? yes
+Could not create directory '/home/bandit13/.ssh' (Permission denied).
+Failed to add the host to the list of known hosts (/home/bandit13/.ssh/known_hosts).
+
+                      This is an OverTheWire game server. 
+            More information on http://www.overthewire.org/wargames
+
+!!! You are trying to log into this SSH server on port 22, which is not intended.
+
+bandit14@localhost: Permission denied (publickey).
+bandit13@bandit:~$ ssh -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -i sshkey.private bandit14@localhost
+Warning: Permanently added 'localhost' (ED25519) to the list of known hosts.
+
+                      This is an OverTheWire game server. 
+            More information on http://www.overthewire.org/wargames
+
+!!! You are trying to log into this SSH server on port 22, which is not intended.
+
+bandit14@localhost: Permission denied (publickey).
+bandit13@bandit:~$ ssh -p 2220  -i sshkey.private bandit14@localhost
+The authenticity of host '[localhost]:2220 ([127.0.0.1]:2220)' can't be established.
+ED25519 key fingerprint is SHA256:C2ihUBV7ihnV1wUXRb4RrEcLfXC5CXlhmAAM/urerLY.
+This key is not known by any other names.
+Are you sure you want to continue connecting (yes/no/[fingerprint])? yes
+Could not create directory '/home/bandit13/.ssh' (Permission denied).
+Failed to add the host to the list of known hosts (/home/bandit13/.ssh/known_hosts).
+                         _                     _ _ _   
+                        | |__   __ _ _ __   __| (_) |_ 
+                        | '_ \ / _` | '_ \ / _` | | __|
+                        | |_) | (_| | | | | (_| | | |_ 
+                        |_.__/ \__,_|_| |_|\__,_|_|\__|
+                                                       
+
+                      This is an OverTheWire game server. 
+            More information on http://www.overthewire.org/wargames
+
+!!! You are trying to log into this SSH server with a password on port 2220 from localhost.
+!!! Connecting from localhost is blocked to conserve resources.
+!!! Please log out and log in again.
+
+
+      ,----..            ,----,          .---.
+     /   /   \         ,/   .`|         /. ./|
+    /   .     :      ,`   .'  :     .--'.  ' ;
+   .   /   ;.  \   ;    ;     /    /__./ \ : |
+  .   ;   /  ` ; .'___,/    ,' .--'.  '   \' .
+  ;   |  ; \ ; | |    :     | /___/ \ |    ' '
+  |   :  | ; | ' ;    |.';  ; ;   \  \;      :
+  .   |  ' ' ' : `----'  |  |  \   ;  `      |
+  '   ;  \; /  |     '   :  ;   .   \    .\  ;
+   \   \  ',  /      |   |  '    \   \   ' \ |
+    ;   :    /       '   :  |     :   '  |--"
+     \   \ .'        ;   |.'       \   \ ;
+  www. `---` ver     '---' he       '---" ire.org
+
+
+Welcome to OverTheWire!
+
+If you find any problems, please report them to the #wargames channel on
+discord or IRC.
+
+--[ Playing the games ]--
+
+  This machine might hold several wargames.
+  If you are playing "somegame", then:
+
+    * USERNAMES are somegame0, somegame1, ...
+    * Most LEVELS are stored in /somegame/.
+    * PASSWORDS for each level are stored in /etc/somegame_pass/.
+
+  Write-access to homedirectories is disabled. It is advised to create a
+  working directory with a hard-to-guess name in /tmp/.  You can use the
+  command "mktemp -d" in order to generate a random and hard to guess
+  directory in /tmp/.  Read-access to both /tmp/ is disabled and to /proc
+  restricted so that users cannot snoop on eachother. Files and directories
+  with easily guessable or short names will be periodically deleted! The /tmp
+  directory is regularly wiped.
+  Please play nice:
+
+    * don't leave orphan processes running
+    * don't leave exploit-files laying around
+    * don't annoy other players
+    * don't post passwords or spoilers
+    * again, DONT POST SPOILERS!
+      This includes writeups of your solution on your blog or website!
+
+--[ Tips ]--
+
+  This machine has a 64bit processor and many security-features enabled
+  by default, although ASLR has been switched off.  The following
+  compiler flags might be interesting:
+
+    -m32                    compile for 32bit
+    -fno-stack-protector    disable ProPolice
+    -Wl,-z,norelro          disable relro
+
+  In addition, the execstack tool can be used to flag the stack as
+  executable on ELF binaries.
+
+  Finally, network-access is limited for most levels by a local
+  firewall.
+
+--[ Tools ]--
+
+ For your convenience we have installed a few useful tools which you can find
+ in the following locations:
+
+    * gef (https://github.com/hugsy/gef) in /opt/gef/
+    * pwndbg (https://github.com/pwndbg/pwndbg) in /opt/pwndbg/
+    * gdbinit (https://github.com/gdbinit/Gdbinit) in /opt/gdbinit/
+    * pwntools (https://github.com/Gallopsled/pwntools)
+    * radare2 (http://www.radare.org/)
+
+--[ More information ]--
+
+  For more information regarding individual wargames, visit
+  http://www.overthewire.org/wargames/
+
+  For support, questions or comments, contact us on discord or IRC.
+
+  Enjoy your stay!
+
+bandit14@bandit:~$ ls -alps
+total 24
+4 drwxr-xr-x  3 root root 4096 Sep 19 07:08 ./
+4 drwxr-xr-x 70 root root 4096 Sep 19 07:09 ../
+4 -rw-r--r--  1 root root  220 Mar 31  2024 .bash_logout
+4 -rw-r--r--  1 root root 3771 Mar 31  2024 .bashrc
+4 -rw-r--r--  1 root root  807 Mar 31  2024 .profile
+4 drwxr-xr-x  2 root root 4096 Sep 19 07:08 .ssh/
+bandit14@bandit:~$ cat /etc/bandit_pass/bandit14
+MU4VWeTyJk8ROof1qqmcBPaLh7lDCPvS
+
+                                                               
